@@ -1,0 +1,32 @@
+ALGORITHM find the sum 
+VAR
+    set1,set2: ARRAY_OF INTEGER;
+    i,j,k : INTEGER;
+    
+BEGIN
+sum=0 ;
+k:=0 ;
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+    
+     WHILE (set1[i]==set2[j] and k<set1.length-1) DO
+         k++
+     END_WHILE   
+     IF (k==set2.length-1) THEN
+         sum1=sum1+set1[i]
+     END_IF
+        
+    END_FOR
+    FOR j FROM 0 TO set2.length-1 STEP 1  DO
+    
+     WHILE (set2[j]==set1[i] and k<set2.length-1) DO
+         k++
+     END_WHILE   
+     IF (k==set1.length-1) THEN
+         sum2=sum2+set2[j]
+     END_IF
+        
+    END_FOR
+   sum=(sum1+sum2)*2
+    write("the sum of overlapping elements" sum);
+    write(set1,set2)
+END

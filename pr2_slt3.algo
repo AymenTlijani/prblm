@@ -1,0 +1,18 @@
+ALGORITHM find the sum 
+// the intersection of two sets A and B ;  احلى وحدة والله حتى هذي
+VAR
+ so = setOps,
+    Set1,Set2: ARRAY_OF INTEGER;
+    k : INTEGER;
+    
+BEGIN
+ Set1: [12, 13, 6, 10]
+ Set2: [13, 10, 16, 15]
+ sum=0 ;
+ SET3 = so.intersection(Set1,Set2);
+FOR k FROM 0 TO SET3.length-1 STEP 1  DO
+    sum = (sum+SET3[k])*2
+END_FOR
+    write("the sum of overlapping elements" sum);
+    write(SET3)
+END

@@ -1,0 +1,58 @@
+ALGORITHM find the sum 
+
+VAR
+   htab : HASH_TABLE< ARRAY_OF INTEGER[];,INTEGER>;
+   set1,set2 :  ARRAY_OF INTEGER[];
+   i,j,count : INTEGER;
+   
+   
+BEGIN
+Set1: [12, 13, 6, 10]
+Set2: [13, 10, 16, 15]
+   Read(set1);
+
+   FOR i FROM 0 TO set1.length -1 STEP 1  DO
+       IF (htab.lookup(set1[i]) = TRUE) THEN
+           count := htab.get(set1[i]);
+           htab.insert(set1[i],count+1);
+       ELSE
+           htab.insert(set1[i],1);
+       END_IF
+   END_FOR
+    Read(set2);
+   FOR j FROM 0 TO set2.length -1 STEP 1  DO
+       IF (htab.lookup(set2[i]) = TRUE) THEN
+           count := htab.get(set2[i]);
+           htab.insert(set2[i],count+1);
+       ELSE
+           htab.insert(set2[i],1);
+       END_IF
+   END_FOR
+
+k=0 ;
+sum=0
+   FOR i FROM 0 TO set1.length -1 STEP 1  DO
+      WHILE  (htab.get(Set1[i]) == htab.get(Set2[j]) and k<Set2.length-1) DO
+           k++;
+           END_WHILE
+          IF 
+           (k==Set2.length-1) THEN
+         sum1=sum1+Set1[i]
+         END_IF
+       
+   END_FOR
+   FOR j FROM 0 TO Set2.length -1 STEP 1  DO
+      WHILE  (htab.get(set1[i]) == htab.get(Set1[i]) and k<Set1.length-1) DO
+           k++;
+           END_WHILE
+          IF 
+           (k==Set.length-1) THEN
+         sum2=sum2+Set2[j]
+         END_IF
+       
+   END_FOR
+
+    sum=(sum1+sum2)*2
+    write("the sum of overlapping elementst" sum);
+    write(Set1,Set2)
+END
